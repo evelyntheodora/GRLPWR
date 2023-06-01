@@ -11,6 +11,8 @@
 		8B164F282A289E430051893D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B164F272A289E430051893D /* ContentView.swift */; };
 		8B164F2A2A289E440051893D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B164F292A289E440051893D /* Assets.xcassets */; };
 		8B164F2D2A289E440051893D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B164F2C2A289E440051893D /* Preview Assets.xcassets */; };
+		8B164F342A28AD8F0051893D /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B164F332A28AD8F0051893D /* ActivityCardView.swift */; };
+		8B164F362A28B1B50051893D /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B164F352A28B1B50051893D /* ActivityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		8B164F272A289E430051893D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B164F292A289E440051893D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B164F2C2A289E440051893D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B164F332A28AD8F0051893D /* ActivityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
+		8B164F352A28B1B50051893D /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				8B164F252A289E430051893D /* GRLPWRApp.swift */,
 				8B164F272A289E430051893D /* ContentView.swift */,
+				8B164F352A28B1B50051893D /* ActivityModel.swift */,
+				8B164F332A28AD8F0051893D /* ActivityCardView.swift */,
 				8B164F292A289E440051893D /* Assets.xcassets */,
 				8B164F2B2A289E440051893D /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B164F362A28B1B50051893D /* ActivityModel.swift in Sources */,
+				8B164F342A28AD8F0051893D /* ActivityCardView.swift in Sources */,
 				8B164F282A289E430051893D /* ContentView.swift in Sources */,
 				8B164F262A289E430051893D /* GRLPWRApp.swift in Sources */,
 			);
