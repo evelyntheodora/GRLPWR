@@ -12,6 +12,9 @@
 		000607B32A2B9DBE009F5AE1 /* NewActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607B22A2B9DBE009F5AE1 /* NewActivityView.swift */; };
 		000607B72A2B9F09009F5AE1 /* AllActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607B62A2B9F09009F5AE1 /* AllActivityView.swift */; };
 		000607BA2A2BAF6C009F5AE1 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607B92A2BAF6C009F5AE1 /* Dashboard.swift */; };
+		000607BC2A2C307D009F5AE1 /* ReflectionResult_Awesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607BB2A2C307D009F5AE1 /* ReflectionResult_Awesome.swift */; };
+		000607BE2A2C30B4009F5AE1 /* ReflectionResult_KeepItUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607BD2A2C30B4009F5AE1 /* ReflectionResult_KeepItUp.swift */; };
+		000607C02A2C30CA009F5AE1 /* ReflectionResult_HavingTroubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000607BF2A2C30CA009F5AE1 /* ReflectionResult_HavingTroubles.swift */; };
 		8B164F262A289E430051893D /* GRLPWRApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B164F252A289E430051893D /* GRLPWRApp.swift */; };
 		8B164F282A289E430051893D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B164F272A289E430051893D /* ContentView.swift */; };
 		8B164F2A2A289E440051893D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B164F292A289E440051893D /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 		000607B22A2B9DBE009F5AE1 /* NewActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityView.swift; sourceTree = "<group>"; };
 		000607B62A2B9F09009F5AE1 /* AllActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivityView.swift; sourceTree = "<group>"; };
 		000607B92A2BAF6C009F5AE1 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		000607BB2A2C307D009F5AE1 /* ReflectionResult_Awesome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionResult_Awesome.swift; sourceTree = "<group>"; };
+		000607BD2A2C30B4009F5AE1 /* ReflectionResult_KeepItUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionResult_KeepItUp.swift; sourceTree = "<group>"; };
+		000607BF2A2C30CA009F5AE1 /* ReflectionResult_HavingTroubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionResult_HavingTroubles.swift; sourceTree = "<group>"; };
 		8B164F222A289E430051893D /* GRLPWR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRLPWR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B164F252A289E430051893D /* GRLPWRApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRLPWRApp.swift; sourceTree = "<group>"; };
 		8B164F272A289E430051893D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 		000607B82A2BAABD009F5AE1 /* ReflectionResultView */ = {
 			isa = PBXGroup;
 			children = (
+				000607BB2A2C307D009F5AE1 /* ReflectionResult_Awesome.swift */,
+				000607BD2A2C30B4009F5AE1 /* ReflectionResult_KeepItUp.swift */,
+				000607BF2A2C30CA009F5AE1 /* ReflectionResult_HavingTroubles.swift */,
 			);
 			path = ReflectionResultView;
 			sourceTree = "<group>";
@@ -195,9 +204,12 @@
 				8B164F362A28B1B50051893D /* ActivityModel.swift in Sources */,
 				8B164F342A28AD8F0051893D /* ActivityCardView.swift in Sources */,
 				000607BA2A2BAF6C009F5AE1 /* Dashboard.swift in Sources */,
+				000607BC2A2C307D009F5AE1 /* ReflectionResult_Awesome.swift in Sources */,
 				000607AB2A2B9AFD009F5AE1 /* Home.swift in Sources */,
 				8B164F282A289E430051893D /* ContentView.swift in Sources */,
+				000607BE2A2C30B4009F5AE1 /* ReflectionResult_KeepItUp.swift in Sources */,
 				000607AF2A2B9C4C009F5AE1 /* ProfileView.swift in Sources */,
+				000607C02A2C30CA009F5AE1 /* ReflectionResult_HavingTroubles.swift in Sources */,
 				8B164F262A289E430051893D /* GRLPWRApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
