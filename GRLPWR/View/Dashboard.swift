@@ -10,7 +10,7 @@ import SwiftUI
 struct Dashboard: View {
     var body: some View {
         NavigationStack{
-            ScrollView {
+            
                 VStack (alignment: .leading) {
                     HStack {
                         VStack (alignment: .leading) {
@@ -38,6 +38,7 @@ struct Dashboard: View {
                     Text("Insert Calendar Here")
                     //            calendar view
                     
+                ScrollView {
                     ForEach(0..<activityData.count) { index in
                         if activityData[index].isTodayActivity {
                             ActivityCardView(activity: activityData[index])
@@ -48,9 +49,19 @@ struct Dashboard: View {
                         HStack {
                             Text("Your Activities(20)")
                             Spacer()
-                            Button("See all") {
-                                
-                            }
+                            NavigationLink(
+                                destination:
+                                    AllActivityView()
+                                   .navigationTitle("All Activities")
+                                    .navigationBarBackButtonHidden(false)
+                            ,
+                            label: {
+                                Text("See All")
+                            })
+                            
+//                            Button("See all") {
+//
+//                            }
                             
                         }
                         ForEach(0..<activityData.count) { index in
@@ -60,9 +71,9 @@ struct Dashboard: View {
                         }
                     }
                 }
-                .padding()
+                
             }
-
+                .padding()
         }
         
     }
