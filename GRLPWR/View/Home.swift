@@ -21,6 +21,7 @@ struct Home: View {
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
+                    Text("Profile")
                 }
                 .tag(1)
         }
