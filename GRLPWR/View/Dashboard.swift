@@ -39,7 +39,7 @@ struct Dashboard: View {
                     //            calendar view
                     
                 ScrollView {
-                    ForEach(0..<activityData.count) { index in
+                    ForEach(0..<activityData.count, id: \.self) { index in
                         if activityData[index].isTodayActivity {
                             ActivityCardView(activity: activityData[index])
                         }
@@ -64,7 +64,7 @@ struct Dashboard: View {
 //                            }
                             
                         }
-                        ForEach(0..<activityData.count) { index in
+                        ForEach(0..<activityData.count, id: \.self) { index in
                             if !activityData[index].isTodayActivity {
                                 ActivityCardView(activity: activityData[index])
                             }
