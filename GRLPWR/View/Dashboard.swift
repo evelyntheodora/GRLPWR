@@ -28,7 +28,7 @@ struct Dashboard: View {
                         Image(systemName: "plus")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 22, height: 22)
+                            .frame(width: 15, height: 15)
                             .padding()
                         
                     }
