@@ -141,7 +141,6 @@ struct AllActivityEmpty: View {
                 selectionTitle = "Upcoming"
                 
             }
-            .animation(.easeInOut(duration: 0.3))
            
         }
     }
