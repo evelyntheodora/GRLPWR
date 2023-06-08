@@ -14,9 +14,9 @@ struct TagView: View {
             Image(systemName: "tag.fill")
             Text(tagName)
         }
-        .padding(4)
+        .padding(5)
         .background()
-        .cornerRadius(5)
+        .cornerRadius(50)
     }
 }
 
@@ -29,22 +29,22 @@ struct ActivityCardView: View {
                 Rectangle()
                     .cornerRadius(15)
                     .frame(width: 66, height: 66)
-                    .padding(.trailing, 16)
+                    .padding(.trailing)
             }
             
-            VStack (alignment: .leading, spacing: 0) {
+            VStack (alignment: .leading, spacing: 10) {
                 HStack {
                     Text(activity.judul)
+                        .font(.title)
+                        .fontWeight(.bold)
                     Spacer()
                     Image(systemName: "chevron.right")
                 }
                 .font(.title2)
-                .padding(.bottom, 4)
                 
                 Text(activity.deskripsi)
                     .lineLimit(2)
                     .font(.subheadline)
-                    .padding(.bottom, 6)
                 
                 HStack {
                     ForEach(0..<2) { index in
@@ -61,12 +61,11 @@ struct ActivityCardView: View {
                     Rectangle()
                         .cornerRadius(15)
                         .frame(minWidth: 134, maxWidth: .infinity, minHeight: 132, maxHeight: 133)
-                        .padding(.top, 16)
                 }
             }
             
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: activity.isTodayActivity ? 130 : 265)
         .padding()
         .background(.gray)
         .cornerRadius(12)
@@ -76,5 +75,6 @@ struct ActivityCardView: View {
 struct ActivityCardView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityCardView(activity: Activity (judul: "Matrix", deskripsi: "ini adalah deskripsi dari aktivitas yang akan dilakukan agar jadi pintar matrix kok ga panjang lagi", image: "", tags: ["Ulangan Harian","Ujian Akhir", "Tag1", "Tag2"], isTodayActivity: false))
+//        TagView(tagName: "Ulangan").colorScheme(.dark)
     }
 }

@@ -111,7 +111,7 @@ struct AllActivityView: View {
                 VStack {
                     Image("orange-guy-all-activity")
                     Text("Your Activity is empty")
-                        .foregroundColor(AppColor.emptyGray)
+                        .foregroundColor(Color.theme.emptyGray)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
@@ -135,17 +135,18 @@ struct forCountActivity: View {
     
 }
 
-//extension Color {
-//    let backgroundCol = Color
-//}
+extension Color {
+    static let theme = AppColor()
+}
 
 struct AppColor {
-    static let bgCol = Color("bg")
-    static let emptyGray = Color("empty-gray")
+    let bgCol = Color("bg")
+    let emptyGray = Color("empty-gray")
 }
 
 struct AllActivityView_Previews: PreviewProvider {
     static var previews: some View {
         AllActivityView()
+//            .colorScheme(.dark)
     }
 }
