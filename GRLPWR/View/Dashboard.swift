@@ -1,79 +1,76 @@
-//
-//  Dashboard.swift
-//  GRLPWR
-//
-//  Created by Sha Nia Siahaan on 04/06/23.
-//
+    //
+    //  Dashboard.swift
+    //  GRLPWR
+    //
+    //  Created by Sha Nia Siahaan on 04/06/23.
+    //
 
 import SwiftUI
 
 struct Dashboard: View {
+    @State var yourActivityCount: Int = 0
     var body: some View {
         NavigationStack{
-            
-                VStack (alignment: .leading) {
-                    HStack {
-                        VStack (alignment: .leading) {
-                            Text("Hi, Gogon!")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                            
-                            Text("Don't forget to make your plans")
-                        }
-                        Spacer()
-                        Button {
-                            
-                        }
-                    label: {
+            VStack (alignment: .leading) {
+                HStack {
+                    VStack (alignment: .leading, spacing: 12) {
+                        Text("Hi, Gogon!")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text("Don't forget to make your plans")
+                    }
+                    Spacer()
+                    NavigationLink(destination: NewActivityView()) {
                         Image(systemName: "plus")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 15, height: 15)
+                            .frame(width: 22, height: 22)
                             .padding()
-                        
                     }
-                    
-                    }
-                    
-                    Text("Insert Calendar Here")
-                    //            calendar view
-                    
+                }
                 ScrollView {
-                    ForEach(0..<activityData.count, id: \.self) { index in
-                        if activityData[index].isTodayActivity {
-                            ActivityCardView(activity: activityData[index])
+                    ZStack {
+                        Rectangle()
+                            .stroke(Color.black)
+                            .frame(width: 358, height: 120)
+                        
+                        Text("Insert Calendar Here")
+                            //            calendar view
+                    }
+                    VStack {
+                        ForEach(0..<activityData.count, id: \.self) { index in
+                            if activityData[index].isTodayActivity {
+                                ActivityCardView(activity: activityData[index])
+                            }
                         }
                     }
+                    .padding(.bottom)
                     
-                    VStack {
-                        HStack {
-                            Text("Your Activities(20)")
-                            Spacer()
-                            NavigationLink(
-                                destination:
-                                    AllActivityView()
-                                   .navigationTitle("All Activities")
-                                    .navigationBarBackButtonHidden(false)
-                            ,
-                            label: {
-                                Text("See All")
-                            })
-                            
-//                            Button("See all") {
-//
-//                            }
-                            
+                        //                MARK: - Your Activity
+                    HStack {
+                        Text("Your Activities (\(yourActivityCount))")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                        NavigationLink {
+                            AllActivityView()
+                        } label: {
+                            Text("See all")
                         }
+                    }
+                    VStack{
+                            //                        ForEach untuk activity
                         ForEach(0..<activityData.count, id: \.self) { index in
                             if !activityData[index].isTodayActivity {
                                 ActivityCardView(activity: activityData[index])
                             }
                         }
+                        .padding(.bottom)
                     }
+                    
                 }
-                
             }
-                .padding()
+            .padding()
         }
         
     }
@@ -84,3 +81,4 @@ struct Dashboard_Previews: PreviewProvider {
         Dashboard()
     }
 }
+
