@@ -12,12 +12,12 @@ struct ReflectionView2: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color(red: 240/255, green: 240/255, blue: 240/255)
+                Color("yellow")
                     .edgesIgnoringSafeArea(.all)
                 
             VStack{
                 VStack{
-                    Image("reflection2")
+                    Image("reflection")
                     
                         .resizable()
                         .scaledToFit()

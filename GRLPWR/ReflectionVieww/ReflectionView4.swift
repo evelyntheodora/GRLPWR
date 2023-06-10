@@ -10,28 +10,32 @@ import SwiftUI
 struct ReflectionView4: View {
     var body: some View {
         NavigationView{
-            VStack{
+            ZStack{
+                Color("yellow")
+                    .edgesIgnoringSafeArea(.all)
                 VStack{
-                 Image("reflection4")
+                    VStack{
+                        Image("reflection")
+                        
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150, height: 150)
+                            .padding()
+                    }
+                    VStack{
+                        Text("How would you rate")
+                        Text("the output of this student?")
+                        
+                    }
+                    //.padding()
+                    .fontWeight(.bold)
+                    .font(.title2)
+                }
+                VStack{
+                    
+                }
                 
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 150, height: 150)
-                                    .padding()
-                            }
-                            VStack{
-                                Text("How would you rate")
-                                Text("the output of this student?")
-                
-                            }
-                            //.padding()
-                                .fontWeight(.bold)
-                                .font(.title2)
             }
-            VStack{
-                
-            }
-            
         }
     }
 }
