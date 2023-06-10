@@ -13,7 +13,7 @@ struct ReflectionResult_Awesome: View {
     
     var body: some View {
         ZStack (alignment: .top) {
-            Color(.white)
+            Color(red: 240/255, green: 240/255, blue: 240/255)
                 .edgesIgnoringSafeArea(.all)
             
             Image ("awesome")
@@ -51,7 +51,7 @@ struct ReflectionResult_Awesome: View {
                         .padding()
                     
                     TextField("Write your thought here", text: $reflection11, axis: .vertical)
-                        .lineLimit(5...5)
+                        .lineLimit(4...4)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .padding(.top, -20.0)
@@ -64,7 +64,7 @@ struct ReflectionResult_Awesome: View {
                         .padding()
                     
                     TextField("Write your thought here", text: $reflection12, axis: .vertical)
-                        .lineLimit(5...5)
+                        .lineLimit(4...4)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .padding(.top, -20.0)
@@ -80,8 +80,8 @@ struct ReflectionResult_Awesome: View {
                     .frame(maxWidth: 327, maxHeight: 45)
                     .background(Color("orange"))
                     .cornerRadius(10)
+                    .padding(.vertical, 20.0)
             }
-
             }
             
             }

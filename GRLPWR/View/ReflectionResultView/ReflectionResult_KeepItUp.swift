@@ -12,7 +12,7 @@ struct ReflectionResult_KeepItUp: View {
     @State var reflection22: String = ""
     var body: some View {
         ZStack (alignment: .top) {
-            Color(.white)
+            Color(red: 240/255, green: 240/255, blue: 240/255)
                 .edgesIgnoringSafeArea(.all)
             
             Image ("keepItUp")
@@ -50,7 +50,7 @@ struct ReflectionResult_KeepItUp: View {
                         .padding()
                     
                     TextField("Write your thought here", text: $reflection21, axis: .vertical)
-                        .lineLimit(5...5)
+                        .lineLimit(4...4)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .padding(.top, -20.0)
@@ -65,7 +65,7 @@ struct ReflectionResult_KeepItUp: View {
                         .padding()
                     
                     TextField("Write your thought here", text: $reflection22, axis: .vertical)
-                        .lineLimit(5...5)
+                        .lineLimit(4...4)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .padding(.top, -20.0)
@@ -81,7 +81,8 @@ struct ReflectionResult_KeepItUp: View {
                     .frame(maxWidth: 327, maxHeight: 45)
                     .background(Color("orange"))
                     .cornerRadius(10)
-                }
+                    .padding(.vertical, 20.0)
+            }
 
             }
         }
