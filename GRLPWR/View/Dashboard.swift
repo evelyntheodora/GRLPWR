@@ -59,7 +59,7 @@ struct Dashboard: View {
                         }
                     }
                     VStack{
-                            //                        ForEach untuk activity
+                    //                        ForEach untuk activity
                         ForEach(0..<activityData.count, id: \.self) { index in
                             if !activityData[index].isTodayActivity {
                                 ActivityCardView(activity: activityData[index])

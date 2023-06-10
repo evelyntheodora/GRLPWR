@@ -9,19 +9,23 @@ import SwiftUI
 
 struct TagView: View {
     var tagName: String
+//    @Binding var selectedTag: Bool
     var body: some View {
         HStack {
             Image(systemName: "tag.fill")
+                .foregroundColor(.black)
             Text(tagName)
+                .foregroundColor(.black)
+//                .background()
         }
         .padding(5)
-        .background()
+        .background(Color.white)
         .cornerRadius(50)
     }
 }
 
 struct ActivityCardView: View {
-    var activity: Activity
+    var activity: Activity //tipe data struct
     
     var body: some View {
         HStack (alignment: .top, spacing: 0) {
@@ -32,27 +36,29 @@ struct ActivityCardView: View {
                     .padding(.trailing)
             }
             
-            VStack (alignment: .leading, spacing: 10) {
-                HStack {
-                    Text(activity.judul)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                    Image(systemName: "chevron.right")
+            VStack (alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading){
+                    HStack {
+                        Text(activity.judul)
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                    }
+                    .font(.title2)
+                    
+                    Text(activity.deskripsi)
+                        .lineLimit(2)
+                        .font(.subheadline)
                 }
-                .font(.title2)
-                
-                Text(activity.deskripsi)
-                    .lineLimit(2)
-                    .font(.subheadline)
                 
                 HStack {
-                    ForEach(0..<2) { index in
+                    ForEach(0..<1) { index in
                         TagView(tagName: activity.tags[index])
                     }
                     
-                    if activity.tags.count > 2 {
-                        Text("\(activity.tags.count-2)+")
+                    if activity.tags.count > 1 {
+                        Text("\(activity.tags.count-1)+")
                     }
                 }
                 .font(.caption)
@@ -74,7 +80,7 @@ struct ActivityCardView: View {
 
 struct ActivityCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityCardView(activity: Activity (judul: "Matrix", deskripsi: "ini adalah deskripsi dari aktivitas yang akan dilakukan agar jadi pintar matrix kok ga panjang lagi", image: "", tags: ["Ulangan Harian","Ujian Akhir", "Tag1", "Tag2"], isTodayActivity: false))
-//        TagView(tagName: "Ulangan").colorScheme(.dark)
+//        ActivityCardView(activity: Activity (judul: "Matrix", deskripsi: "ini adalah deskripsi dari aktivitas yang akan dilakukan agar jadi pintar matrix kok ga panjang lagi", image: "", tags: ["Ulangan Harian","Ujian Akhir", "Tag1", "Tag2"], isTodayActivity: false))
+        TagView(tagName: "Ulangan Harian").colorScheme(.dark)
     }
 }

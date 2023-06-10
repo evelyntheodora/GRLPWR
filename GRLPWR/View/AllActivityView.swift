@@ -37,50 +37,6 @@ struct SearchBar: UIViewRepresentable {
     }
 }
 
-struct AllActivityView2: View {
-    @State private var searchText = ""
-    
-    var body: some View {
-        NavigationView {
-//            HStack  {
-//                Button {
-//
-//                }
-//            label: {
-//                Image(systemName: "chevron.left")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 15, height: 15)
-//                    .padding()
-//                }
-//
-//                Text ("All Activities")
-//                    .padding(.leading, 100)
-//
-//            }
-//            .frame(maxWidth: .infinity, alignment: .leading)
-           
-//            Image(systemName: "magnifyingglass.circle.fill")
-//                .resizable()
-//                .scaledToFit()
-//                .frame(width: 169, height: 190)
-               
-            ZStack {
-                       SearchBar(searchText: $searchText)
-                       Text("Find Your Activity \(searchText)")
-//                           .foregroundColor(.gray)
-//                           .padding(.trailing, 170)
-                
-//                        Image(systemName: "line.3.horizontal.decrease.circle.fill")
-//                            .foregroundColor(.gray)
-//                            .padding(.leading, 320)
-                   }
-    
-        }
-        .padding()
-    }
-}
-
 struct AllActivityView: View {
     @State private var searchText = ""
     @State var activityCount: Int = 0
@@ -108,17 +64,28 @@ struct AllActivityView: View {
                         }
                     }
                 }
-                VStack {
-                    Image("orange-guy-all-activity")
-                    Text("Your Activity is empty")
-                        .foregroundColor(Color.theme.emptyGray)
+//                VStack {
+//                    Image("orange-guy-all-activity")
+//                    Text("Your Activity is empty")
+//                        .foregroundColor(Color.theme.emptyGray)
+//                }
+//                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                VStack{
+                //                        ForEach untuk activity
+                    ForEach(0..<activityData.count, id: \.self) { index in
+                        if !activityData[index].isTodayActivity {
+                            ActivityCardView(activity: activityData[index])
+                        }
+                    }
+                    .padding(.bottom)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             }
             .padding()
         }
+        .navigationBarTitle("All Activity")
         .searchable(text: $searchText, prompt: "Find your activity")
     }
+        
 }
 
 struct forCountActivity: View {
