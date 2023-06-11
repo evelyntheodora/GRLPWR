@@ -29,7 +29,7 @@ struct ActivityCardView: View {
     
     var body: some View {
         HStack (alignment: .top, spacing: 0) {
-            if activity.isTodayActivity {
+            if Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) {
                 Rectangle()
                     .cornerRadius(15)
                     .frame(width: 66, height: 66)
@@ -40,7 +40,6 @@ struct ActivityCardView: View {
                 VStack(alignment: .leading){
                     HStack {
                         Text(activity.judul)
-                            .font(.title)
                             .fontWeight(.bold)
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -49,8 +48,9 @@ struct ActivityCardView: View {
                     
                     Text(activity.deskripsi)
                         .lineLimit(2)
-                        .font(.subheadline)
+                        .font(.footnote)
                 }
+                .foregroundColor(.white)
                 
                 
                 HStack {
@@ -64,24 +64,28 @@ struct ActivityCardView: View {
                 }
                 .font(.caption)
                 
-                if !activity.isTodayActivity {
-                    Rectangle()
-                        .cornerRadius(15)
-                        .frame(minWidth: 134, maxWidth: .infinity, minHeight: 132, maxHeight: 133)
+                if !Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) {
+//                    Rectangle()
+//                        .cornerRadius(15)
+//                        .frame(minWidth: 134, maxWidth: .infinity, minHeight: 132, maxHeight: 133)
+                    
+                    Image("geoBig")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                 }
             }
             
         }
-        .frame(maxWidth: .infinity, maxHeight: activity.isTodayActivity ? 130 : 265)
+        .frame(maxWidth: .infinity, maxHeight: Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) ? 130 : 265)
         .padding()
-        .background(.gray)
+        .background(Color(Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) ? "blue2" : "blue3"))
         .cornerRadius(12)
     }
 }
 
 struct ActivityCardView_Previews: PreviewProvider {
     static var previews: some View {
-//        ActivityCardView(activity: Activity (judul: "Matrix", deskripsi: "ini adalah deskripsi dari aktivitas yang akan dilakukan agar jadi pintar matrix kok ga panjang lagi", image: "", tags: ["Ulangan Harian","Ujian Akhir", "Tag1", "Tag2"], isTodayActivity: false))
-        TagView(tagName: "Ulangan Harian").colorScheme(.dark)
+        ActivityCardView(activity: Activity (judul: "Matrix", deskripsi: "ini adalah deskripsi dari aktivitas yang akan dilakukan agar jadi pintar matrix kok ga panjang lagi", image: "", tags: ["Ulangan Harian","Ujian Akhir", "Tag1", "Tag2"], activityDate: Date()))
+//        TagView(tagName: "Ulangan Harian").colorScheme(.dark)
     }
 }
