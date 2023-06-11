@@ -14,7 +14,7 @@ struct Dashboard: View {
             VStack (alignment: .leading) {
                 HStack {
                     VStack (alignment: .leading, spacing: 12) {
-                        Text("Hi, Gogon!")
+                        Text("Hello!")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                         Text("Don't forget to make your plans")
@@ -46,7 +46,7 @@ struct Dashboard: View {
                     }
                     .padding(.bottom)
                     
-                        //                MARK: - Your Activity
+                //                MARK: - Your Activity
                     HStack {
                         Text("Your Activities (\(yourActivityCount))")
                             .font(.title2)

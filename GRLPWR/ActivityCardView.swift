@@ -52,6 +52,7 @@ struct ActivityCardView: View {
                         .font(.subheadline)
                 }
                 
+                
                 HStack {
                     ForEach(0..<1) { index in
                         TagView(tagName: activity.tags[index])
