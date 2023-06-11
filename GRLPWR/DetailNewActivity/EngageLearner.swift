@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EngageLearner: View {
+    @State var engageNote: String = ""
     var body: some View {
         ZStack {
             Color("yellow")
@@ -59,7 +60,7 @@ struct EngageLearner: View {
                             .font(.title)
                             .fontWeight(.medium)
                             .font(.system(size: 25))
-                            .padding(.bottom, 16)
+                            .padding(.bottom, 12)
                         
                         Text("Make learners engage with the topic that you are trying to bring")
                             .frame(maxWidth: 325, alignment: .leading)
@@ -75,6 +76,22 @@ struct EngageLearner: View {
                             .frame(maxWidth: 325, alignment: .leading)
                             .font(.system(size: 16))
                             .foregroundColor(.gray)
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(height: 144)
+                                .frame(width: 326)
+                                .cornerRadius(20)
+                            Text("check box here")
+                        }
+                        
+                        TextField("Write your thought here", text: $engageNote, axis: .vertical)
+                            .lineLimit(4...4)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 326)
+                            .cornerRadius(20)
+                            .padding()
+                            .padding(.top, -10.0)
                     }
                 }
             }

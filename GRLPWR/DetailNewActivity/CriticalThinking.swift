@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CriticalThinking: View {
+    @State var creativeNote: String = ""
     var body: some View {
         ZStack {
             Color("yellow")
@@ -47,7 +48,7 @@ struct CriticalThinking: View {
                     } label: {
                         Text("Done")
                             .fontWeight(.medium)
-                            .font(.system(size: 16))
+                            .font(.system(size: 12))
                     }
                 }
                 Spacer()
@@ -75,6 +76,22 @@ struct CriticalThinking: View {
                             .frame(maxWidth: 325, alignment: .leading)
                             .font(.system(size: 16))
                             .foregroundColor(.gray)
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(height: 319)
+                                .frame(width: 326)
+                                .cornerRadius(20)
+                            Text("check box here")
+                        }
+                        TextField("Write your thought here", text: $creativeNote, axis: .vertical)
+                            .lineLimit(4...4)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 326)
+                            .cornerRadius(20)
+                            .padding()
+                            .padding(.top, -10.0)
+                        
                     }
                 }
             }
