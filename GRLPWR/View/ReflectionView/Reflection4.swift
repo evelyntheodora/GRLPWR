@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Reflection4: View {
-    @State var selectedNumber: Int?
+    @State var selectedNumber: Int = 0
     
     let numbers = Array(1...10)
     
@@ -116,8 +116,8 @@ struct Reflection4: View {
                                                 }
                                 .navigationTitle("Reflection")
                               .navigationBarTitleDisplayMode(.inline)
-                                
-                               // .disabled(self.selectedOption != "" ? false : true)
+                              
+                                .disabled(selectedNumber <= 0)
                             }
                             
                                 
