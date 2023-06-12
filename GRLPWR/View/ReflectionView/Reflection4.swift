@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Reflection4: View {
     @State var selectedNumber: Int = 0
+    @State var showbutton: Bool = false
     
     let numbers = Array(1...10)
     
@@ -99,28 +100,57 @@ struct Reflection4: View {
                             //  })
                             
                             VStack{
-                                NavigationLink(destination: Home()) {
-                                                    Text("Submit")
-                                                        .padding()
-                                                        .padding(.horizontal,140)
-                                                        .background(
-//                                                            self.selectedOption !=  "" ?
-                                                           // Color.yellow :
-                                                            Color(red: 255/255, green: 138/255, blue: 72/255)
-                                                        )
-                                                        .foregroundColor(.white)
-                                                        .cornerRadius(12)
-                                                        
-                                                        
-                                                        
-                                                }
-                                .navigationTitle("Reflection")
-                              .navigationBarTitleDisplayMode(.inline)
-                              
-                                .disabled(selectedNumber <= 0)
-                            }
-                            
+                                //Text("\(number)")
+                                if selectedNumber <= 3   {
+                                    NavigationLink(destination: ReflectionResult_HavingTroubles()) {
+                                        Text("Submit")}
+                                    //.padding()
+                                } else if selectedNumber == 4 {
+                                    NavigationLink(destination: ReflectionResult_KeepItUp()) {
+                                        Text("Submit")}
+                                } else if selectedNumber == 5 {
+                                    NavigationLink(destination: ReflectionResult_KeepItUp()) {
+                                        Text("Submit")}
+                                } else if selectedNumber == 6 {
+                                    NavigationLink(destination: ReflectionResult_KeepItUp()) {
+                                        Text("Submit")}
+                                } else if selectedNumber == 7 {
+                                    NavigationLink(destination: ReflectionResult_KeepItUp()) {
+                                        Text("Submit")}
+                                } else if selectedNumber >= 8 {
+                                    NavigationLink(destination: ReflectionResult_Awesome()) {
+                                        Text("Submit")}
+                                    
+                                    
+                                    
+//                                    NavigationLink(destination: Home()) {
+//                                        Text("Submit")
+//                                            .padding()
+//                                            .padding(.horizontal,140)
+//                                            .background(
+//                                                //                                                            self.selectedOption !=  "" ?
+//                                                // Color.yellow :
+//                                                Color(red: 255/255, green: 138/255, blue: 72/255)
+//                                            )
+//                                            .foregroundColor(.white)
+//                                            .cornerRadius(12)
+//
+//
+//
+//                                    }
+                                    
+                                    
+                                    //.disabled(selectedNumber <= 0)
+                                }
                                 
+                            }
+                            .padding()
+                            .padding(.horizontal,140)
+                            .background(Color(red: 255/255, green: 138/255, blue: 72/255))
+                            .foregroundColor(.white).cornerRadius(12)
+                            .navigationTitle("Reflection")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .disabled(selectedNumber <= 0)
                                    // Color.yellow :
 //                                    Color(red: 255/255, green: 138/255, blue: 72/255):
 //                                        Color.gray
