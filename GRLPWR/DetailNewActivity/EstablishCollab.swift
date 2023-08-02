@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EstablishCollab: View {
+    @State var collabNote: String = ""
     var body: some View {
         ZStack {
             Color("yellow")
@@ -47,7 +48,7 @@ struct EstablishCollab: View {
                     } label: {
                         Text("Done")
                             .fontWeight(.medium)
-                            .font(.system(size: 16))
+                            .font(.system(size: 12))
                     }
                 }
                 Spacer()
@@ -75,6 +76,42 @@ struct EstablishCollab: View {
                             .frame(maxWidth: 325, alignment: .leading)
                             .font(.system(size: 16))
                             .foregroundColor(.gray)
+                        
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(height: 168)
+                                .frame(width: 326)
+                                .cornerRadius(20)
+                            Text("check box here")
+                        }
+                        Text("List of activities and games that can establish collaboration between learners")
+                            .frame(maxWidth: 325, alignment: .leading)
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                        
+                        Text("Choose one or more")
+                            .frame(maxWidth: 325, alignment: .leading)
+                            .font(.system(size: 16))
+                            .foregroundColor(.gray)
+                        
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .frame(height: 144)
+                                .frame(width: 326)
+                                .cornerRadius(20)
+                            Text("check box here")
+                        }
+                        TextField("Write your thought here", text: $collabNote, axis: .vertical)
+                            .lineLimit(4...4)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 326)
+                            .cornerRadius(20)
+                            .padding()
+                            .padding(.top, -10.0)
+                        
+                        
                     }
                 }
             }

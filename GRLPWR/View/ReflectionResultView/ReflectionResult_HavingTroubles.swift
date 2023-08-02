@@ -22,7 +22,7 @@ struct ReflectionResult_HavingTroubles: View {
             
             VStack {
                 VStack(alignment: .leading) {
-                    Text ("Awesome!")
+                    Text ("Having Troubles?")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)

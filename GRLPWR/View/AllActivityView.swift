@@ -73,7 +73,7 @@ struct AllActivityView: View {
                 VStack{
                 //                        ForEach untuk activity
                     ForEach(0..<activityData.count, id: \.self) { index in
-                        if !activityData[index].isTodayActivity {
+                        if !Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) {
                             ActivityCardView(activity: activityData[index])
                         }
                     }

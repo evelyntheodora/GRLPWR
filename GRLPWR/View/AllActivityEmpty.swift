@@ -11,81 +11,54 @@ struct AllActivityEmpty: View {
     @State var searchText = ""
     
     var body: some View {
+        NavigationView{
         ZStack{
-            Color(red: 240/255, green: 240/255, blue: 240/255)
-                .edgesIgnoringSafeArea(.all)
-            
+                
+                Color(red: 240/255, green: 240/255, blue: 240/255)
+                    .edgesIgnoringSafeArea(.all)
+                
             VStack{
-                VStack{
-                    Image("allactivityimage")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                }
-                
-                .padding()
-                
-                Spacer()
                 
                 VStack{
-//                    ZStack{
-//                        SearchBar(searchText: $searchText)
-//                        Text("Find Your Activity \(searchText)")
-//                            .foregroundColor(.gray)
-//                            .padding(.trailing, 170)
-//
-//                         Image(systemName: "line.3.horizontal.decrease.circle.fill")
-//                             .foregroundColor(.gray)
-//                             .padding(.leading, 320)
-//                    }
-                    ZStack{
-                        HStack{
-                            Image(systemName: "magnifyingglass")
-                                .padding(.trailing)
-                            TextField("Find Your Activity", text: $searchText)
-                            
-                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                .foregroundColor(.gray)
-                               
-                                
-                        }
-                        .frame(width: 360)
-                        .padding(5)
-                        .background(Color.white)
-                        .cornerRadius(20)
-                        .padding()
-                    }
-                }
-                
-                VStack{
-                    HStack{
-                        Text("0 Activity")
-                            .font(.system(size: 25,weight: .semibold))
-                        Spacer()
+                    LazyHStack(alignment: .top,spacing: 20){
                         
-                        DropDownView()
+                            Text("0 Activity")
+                                .font(.system(size: 25,weight: .semibold))
                             
+                           Spacer()
+                        
+                            DropDownView()
+                               
+                        
+                        
+                        
+                        //Spacer()
                     }
                     
-                    .padding(.all)
-                    Spacer()
+                  
+                        
+                        
+                   
                 }
-                
+                Spacer()
                 VStack{
-                    Image(systemName: "doc.text.magnifyingglass")
+                    Image("orange-guy-all-activity")
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: 150, height: 150)
                         .foregroundColor(.gray).opacity(0.5)
                     Text("Your Activity is Empty")
                         .font(.system(size: 20, weight: .regular))
                         .foregroundColor(.gray).opacity(0.7)
-                        
+                    
                 }
                 .padding(.bottom,220)
                 Spacer()
                 
+                
             }
-            
-        }
+                
+            }
+        }.searchable(text: $searchText)
     }
     
     struct DropDownView: View{
@@ -116,22 +89,18 @@ struct AllActivityEmpty: View {
                     
                     VStack(spacing: 8){
                         DropDownMenuItem(isSelected: $isSelected, selectionTitle: $selectionTitle, selectionId: $selectedRowId, item: .init(id: 1, title: "Upcoming", onSelect: {}))
-                        Divider()
-                            .background(.white)
-                            .padding(.horizontal)
+                        
                         DropDownMenuItem(isSelected: $isSelected, selectionTitle: $selectionTitle, selectionId: $selectedRowId, item: .init(id: 2, title: "Recent", onSelect: {}))
-                        Divider()
-                            .background(.white)
-                            .padding(.horizontal)
+                        
                         DropDownMenuItem(isSelected: $isSelected, selectionTitle: $selectionTitle, selectionId: $selectedRowId, item: .init(id: 3, title: "Done", onSelect: {}))
                     }
                 }
                 
             }
             
-            .frame(width: 150)
+            .frame(width: 140)
             .padding(12)
-            
+            .background(.white).opacity(0.8)
             .cornerRadius(12)
             .onTapGesture {
                 isSelected.toggle()
