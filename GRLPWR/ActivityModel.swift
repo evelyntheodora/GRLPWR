@@ -43,4 +43,3 @@ var theTags: [Tag] = [
     Tag(name: "Physic", isSelected: false),
     Tag(name: "Art", isSelected: false)
 ]
-
