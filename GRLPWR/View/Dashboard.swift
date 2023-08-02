@@ -1,9 +1,9 @@
-//
-//  Dashboard.swift
-//  GRLPWR
-//
-//  Created by Sha Nia Siahaan on 04/06/23.
-//
+    //
+    //  Dashboard.swift
+    //  GRLPWR
+    //
+    //  Created by Sha Nia Siahaan on 04/06/23.
+    //
 
 import SwiftUI
 
@@ -76,15 +76,12 @@ struct Dashboard: View {
 
 struct Dashboards: View {
     @State var yourActivityCount: Int = 0
-    @StateObject var activityModel: ActivityViewModel = ActivityViewModel()
-    @Namespace var animation
-    
     var body: some View {
         NavigationStack{
             VStack (alignment: .leading) {
                 HStack {
                     VStack (alignment: .leading, spacing: 12) {
-                        Text("Hi, Gogon!")
+                        Text("Hello!")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                         Text("Don't forget to make your plans")
@@ -112,46 +109,38 @@ struct Dashboards: View {
                             if activityData[index].isTodayActivity {
                                 ActivityCardView(activity: activityData[index])
                             }
-                            Image(systemName: "chevron.right")
                         }
                     }
-                }
-                VStack {
-                    ForEach(activityModel.storedActivity, id: \.self) { activity in
-                        if Calendar.current.isDate(activity.activityDate, inSameDayAs: Date()) {
-                            ActivityCardView(activity: activity)
-                        }
-                    }
-                }
-                .padding(.bottom)
-                
+                    .padding(.bottom)
+                    
                 //                MARK: - Your Activity
-                HStack {
-                    Text("Your Activities (\(yourActivityCount))")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                    Spacer()
-                    NavigationLink {
-                        //                        AllActivityView()
-                    } label: {
-                        Text("See all")
+                    HStack {
+                        Text("Your Activities (\(yourActivityCount))")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                        NavigationLink {
+                            AllActivityView()
+                        } label: {
+                            Text("See all")
+                        }
                     }
-                }
-                VStack{
+                    VStack{
                     //                        ForEach untuk activity
-                    //                        ForEach(0..<activityData.count, id: \.self) { index in
-                    //                            if !activityData[index].isTodayActivity {
-                    //                                ActivityCardView(activity: activityData[index])
-                    //                            }
-                    //                        }
-                    //                        .padding(.bottom)
+                        ForEach(0..<activityData.count, id: \.self) { index in
+                            if !activityData[index].isTodayActivity {
+                                ActivityCardView(activity: activityData[index])
+                            }
+                        }
+                        .padding(.bottom)
+                    }
+                    
                 }
-                
             }
+            .padding()
         }
-        .padding()
+        
     }
-    
 }
 
 struct Dashboard_Previews: PreviewProvider {

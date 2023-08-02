@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BuildConfidence: View {
-    @State var creativeNote: String = ""
     var body: some View {
         ZStack {
             Color("yellow")
@@ -60,7 +59,7 @@ struct BuildConfidence: View {
                             .font(.title)
                             .fontWeight(.medium)
                             .font(.system(size: 25))
-                            .padding(.bottom, 12)
+                            .padding(.bottom, 16)
                         
                         Text("Help learners to build their confidence by presenting what they have been working on")
                             .frame(maxWidth: 325, alignment: .leading)
@@ -76,23 +75,6 @@ struct BuildConfidence: View {
                             .frame(maxWidth: 325, alignment: .leading)
                             .font(.system(size: 16))
                             .foregroundColor(.gray)
-                        
-                        ZStack{
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .frame(height: 279)
-                                .frame(width: 326)
-                                .cornerRadius(20)
-                            Text("check box here")
-                        }
-                        TextField("Write your thought here", text: $creativeNote, axis: .vertical)
-                            .lineLimit(4...4)
-                            .textFieldStyle(.roundedBorder)
-                            .frame(width: 326)
-                            .cornerRadius(20)
-                            .padding()
-                            .padding(.top, -10.0)
-                        
                     }
                 }
             }

@@ -15,7 +15,7 @@ struct ReflectionResult_KeepItUp: View {
             Color(red: 240/255, green: 240/255, blue: 240/255)
                 .edgesIgnoringSafeArea(.all)
             
-            Image("keepItUP")
+            Image ("keepItUp")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .ignoresSafeArea()
