@@ -70,15 +70,15 @@ struct AllActivityView: View {
 //                        .foregroundColor(Color.theme.emptyGray)
 //                }
 //                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                VStack{
+//                VStack{
                 //                        ForEach untuk activity
-                    ForEach(0..<activityData.count, id: \.self) { index in
-                        if !activityData[index].isTodayActivity {
-                            ActivityCardView(activity: activityData[index])
-                        }
-                    }
-                    .padding(.bottom)
-                }
+//                    ForEach(0..<activityData.count, id: \.self) { index in
+//                        if !activityData[index] {
+//                            ActivityCardView(activity: activityData[index])
+//                        }
+//                    }
+//                    .padding(.bottom)
+//                }
             }
             .padding()
         }
